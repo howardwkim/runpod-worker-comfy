@@ -15,7 +15,7 @@ variable "HUGGINGFACE_ACCESS_TOKEN" {
 }
 
 group "default" {
-  targets = ["base", "sdxl"]
+  targets = ["base"]
 }
 
 target "base" {
@@ -24,15 +24,4 @@ target "base" {
   target = "base"
   platforms = ["linux/amd64"]
   tags = ["${DOCKERHUB_REPO}/${DOCKERHUB_IMG}:${RELEASE_VERSION}-base"]
-}
-
-target "sdxl" {
-  context = "."
-  dockerfile = "Dockerfile"
-  target = "final"
-  args = {
-    MODEL_TYPE = "sdxl"
-  }
-  tags = ["${DOCKERHUB_REPO}/${DOCKERHUB_IMG}:${RELEASE_VERSION}-sdxl"]
-  inherits = ["base"]
 }
