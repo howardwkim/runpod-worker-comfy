@@ -4,6 +4,12 @@ services:
       resources:
         reservations:
           devices: []
+    volumes:
+      - latentspace:/workspace  # Use this volume only in local development
     environment:
       - SERVE_API_LOCALLY=true
-      - CUDA_VISIBLE_DEVICES=""  # This explicitly disables CUDA 
+      - CUDA_VISIBLE_DEVICES=-1  # This explicitly disables CUDA 
+
+volumes:
+  latentspace:
+    external: true
