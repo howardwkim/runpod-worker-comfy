@@ -1,0 +1,9 @@
+services:
+  comfyui-worker:
+    deploy:
+      resources:
+        reservations:
+          devices: []
+    environment:
+      - SERVE_API_LOCALLY=true
+      - CUDA_VISIBLE_DEVICES=""  # This explicitly disables CUDA 
