@@ -1,6 +1,6 @@
 services:
   comfyui-worker:
-    image: timpietruskyblibla/runpod-worker-comfy:3.4.0-sdxl
+    image: howardwkim/runpod-worker-comfy-latent-space:howard-custom-base-1
     deploy:
       resources:
         reservations:
